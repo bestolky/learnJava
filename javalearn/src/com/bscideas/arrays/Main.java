@@ -11,9 +11,10 @@ public class Main {
 		//arr.changeIntValue();
 		//arr.differentMidAdnMinElement();
 		//arr.changePlace();
-		arr.multiplicateThree();
+		//arr.multiplicateThree();
+		arr.searchElements();
 		System.out.println(arr);
-		System.out.println(arr.multiplicateThreeValue);
+		//System.out.println(arr.testValue);
 		
 		
 	}

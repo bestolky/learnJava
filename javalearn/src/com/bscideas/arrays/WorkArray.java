@@ -8,7 +8,7 @@ public class WorkArray {
 	1)В массиве целых чисел поменять местами максимальный отрицательный элемент и минимальный положительный. - DONE
 	2)В массиве целых чисел определить сумму элементов, состоящих на чётных позициях. - DONE
 	3)В массиве целых чисел заменить нулями отрицательные элементы. - DONE
-	4)В массиве целых чисел утроить каждый положительный элемент, который стоит перед отрицательным. In Progress
+	4)В массиве целых чисел утроить каждый положительный элемент, который стоит перед отрицательным. DONE
 	5)В массиве целых чисел найти разницу между средним арифметическим и значение минимального элемента. - DONE
 	6)В массиве целых чисел вывести все элементы, которые встречаются больше одного раза и индексы которых нечётные. In Progress
 	7)В массиве целых чисел заменить все нечётные числа на 0. - DONE
@@ -25,10 +25,12 @@ public class WorkArray {
 	int sumDifferent;
 	int multiplicateThreeValue;
 	int multiplicateThreeValueSum;
+	int saveFirstIndex;
+	int saveSecondIndex;
 	
 	int[] array = new int[20];
 	
-	public int[] generateArray() {
+ 	public int[] generateArray() {
 		// Генерация массива от -10 до +10
 		for (int i = 0; i < array.length; i++) {
 			
@@ -37,18 +39,31 @@ public class WorkArray {
 		}
 		return array;
 	}
-	
-	public int[] multiplicateThree() {
+		
+	public int[] searchElements() {
+		Arrays.sort(array); //вот тут кажется условие лютым колхозом, умнее к сожалению не придумал.
+		//6)В массиве целых чисел вывести все элементы, которые встречаются больше одного раза и индексы которых нечётные.
+			for(int i = 1; i < array.length - 1 ; i++) {
+				if(array[i] == array[i+1] && i%2 != 0 || array[i] == array[i-1] && i%2 != 0) {
+					System.out.println(array[i]);
+				}
+			}
+		return array;
+	}
+	public int multiplicateThree() {
 		//4)В массиве целых чисел утроить каждый положительный элемент, который стоит перед отрицательным.
-		for(int i = 0; i < array.length; i++) {
+		for(int i = 0; i < array.length-1; i++) {
 			
 			if(array[i] > 0 && array[i+1] < 0) {
-				System.out.println(array[i]);
+				
+				multiplicateThreeValue = array[i];
+				
+				multiplicateThreeValueSum += multiplicateThreeValue * 3;
 			}
 			
 		}
 		
-		return array;
+		return multiplicateThreeValueSum;
 	}
 	
 	public int searchDublicate() {
