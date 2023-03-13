@@ -10,7 +10,7 @@ public class WorkArray {
 	3)В массиве целых чисел заменить нулями отрицательные элементы. - DONE
 	4)В массиве целых чисел утроить каждый положительный элемент, который стоит перед отрицательным. DONE
 	5)В массиве целых чисел найти разницу между средним арифметическим и значение минимального элемента. - DONE
-	6)В массиве целых чисел вывести все элементы, которые встречаются больше одного раза и индексы которых нечётные. In Progress
+	6)В массиве целых чисел вывести все элементы, которые встречаются больше одного раза и индексы которых нечётные. DONE
 	7)В массиве целых чисел заменить все нечётные числа на 0. - DONE
 	 */
 
@@ -25,8 +25,6 @@ public class WorkArray {
 	int sumDifferent;
 	int multiplicateThreeValue;
 	int multiplicateThreeValueSum;
-	int saveFirstIndex;
-	int saveSecondIndex;
 	
 	int[] array = new int[20];
 	
@@ -66,14 +64,6 @@ public class WorkArray {
 		return multiplicateThreeValueSum;
 	}
 	
-	public int searchDublicate() {
-		//В массиве целых чисел вывести все элементы, которые встречаются больше одного раза и индексы которых нечётные.
-		for(int i = 0; i < array.length; i++) {
-			
-		}
-		
-		return 1;
-	}
 	
 	public int differentMidAdnMinElement() {
 		minimumValueForDifferent = array[0];
