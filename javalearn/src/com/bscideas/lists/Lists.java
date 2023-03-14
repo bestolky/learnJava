@@ -3,10 +3,23 @@ package com.bscideas.lists;
 import java.util.Arrays;
 import java.util.Scanner;
 
+
 public class Lists {
 	
+	/*
+		!Done! - Ввести n строк с консоли, найти самую короткую и самую длинную строки. Вывести найденные строки и их длину.
+		Ввести n строк с консоли. Вывести на консоль те строки, длина которых больше средней, а также длину.
+		Ввести n строк с консоли. Вывести на консоль те строки, длина которых меньше средней, а также длину.
+		Ввести n слов с консоли. Найти слово, в котором число различных символов минимально. Если таких слов несколько, найти первое из них.
+		Ввести n слов с консоли. Найти слово, состоящее только из различных символов. Если таких слов несколько, найти первое из них.
+		Ввести n слов с консоли. Найти слово, состоящее только из цифр. Если таких слов больше одного, найти второе из них.
+	 */
+	String perem;
 	String[] letters = new String[3];
-
+	int checkValue;
+	int minimumValue;
+	int maximumValue;
+	
 	public String[] inputLetters() { 
 		
 		int i = 0;
@@ -18,24 +31,38 @@ public class Lists {
 			letters[i] = sc.nextLine();
 		}
 		
-		System.out.println(Arrays.toString(letters));
+		perem = Arrays.toString(letters);
+		//System.out.println("Массив данных: " + perem);
 		return letters;
 		
 	}
 
-
-	public void searchShortAndMaxElement() {
-		int count = 0;
-		int countTemp = 0;
-		char[] changeLetterToChar = letters.toString().toCharArray();
-		System.out.println(Arrays.toString(changeLetterToChar));
-		for(int i = 0; i < changeLetterToChar.length; i++) {
+	public String[] searchShortAndMaxElement() {
+		
+		int tempCheckValue = letters[0].length();
+		int checkValueMin= letters[0].length();
+		
+		// поиск наибольшего
+		for(int i = 0; i < letters.length; i++) {
+			checkValue = letters[i].length();
 			
+			if(checkValue > tempCheckValue) {
+				maximumValue = i;
+				tempCheckValue = checkValue;
+			}
+			
+			if(checkValue < checkValueMin) {
+				minimumValue = i;
+				checkValueMin = checkValue;
+			}
+			//System.out.println("Check: " + checkValue);
 		}
-		/*for(int i = 0; i < letters.length; i++) {
-			count++;
-			System.out.println(count);
-		}*/
+		// поиск наименьшего
+	
+		
+		System.out.println("Letter Max: " + letters[maximumValue] + "; amount symbols: " + tempCheckValue );
+		System.out.println("Letter Min: " + letters[minimumValue] + "; amount symbols: " + checkValueMin );
+		return letters;
 	}
 
 }
