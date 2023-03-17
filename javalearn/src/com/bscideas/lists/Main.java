@@ -8,7 +8,8 @@ public class Main {
 		//list.searchShortAndMaxElement();
 		//list.searchMoreAverage();
 		//list.searchMinAverage();
-		list.searchNumbers();
+		//list.searchNumbers();
+		list.anotherSymbols();
 
 	}
 }

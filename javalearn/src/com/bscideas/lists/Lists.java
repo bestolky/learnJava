@@ -17,7 +17,8 @@ public class Lists {
 		!DONE! Ввести n слов с консоли. Найти слово, состоящее только из цифр. Если таких слов больше одного, найти второе из них.
 	 */
 	String perem;
-	String[] letters = new String[3]; // задание размера массива
+	int arrayLength = 1;
+	String[] letters = new String[arrayLength]; // задание размера массива
 	int checkValue;
 	int minimumValue;
 	int maximumValue;
@@ -161,6 +162,34 @@ public class Lists {
 			System.out.println(secondWord);
 		}else if(saveWord != null){
 			System.out.println(saveWord);
+		}
+	}
+	
+	public void anotherSymbols(){
+		//Ввести n слов с консоли. Найти слово, состоящее только из различных символов. Если таких слов несколько, найти первое из них.
+		String saveWord = null;
+		char temp = 0;
+		int count = 0;
+		
+		for(String word : letters) {
+			
+			char[] array = word.toCharArray();
+			
+			for(int i = 0; i < array.length; i++) {
+				
+				//System.out.println("First: " + array[i]);
+
+				for(int j = 0; j < array.length; j ++ ) {
+					
+					//System.out.println("SecondLoop: " + array[j]);
+					
+					if(array[i] != array[j]) {
+						
+					count++; // ТУТ НАДО ПРИДУМАТЬ КАК СОХРАНИТЬ ЗНАЧЕНИЯ ДЛЯ КАЖДОГО СЛОВА, НЕ ПОНИМАЮ :(
+					
+					}
+				}
+			}
 		}
 	}
 }
