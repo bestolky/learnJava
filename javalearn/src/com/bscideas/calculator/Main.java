@@ -7,7 +7,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		
 		Calculator perem = new Calculator();
 		int number = 0;
 		int number1 = 0;
@@ -22,8 +21,7 @@ public class Main {
 	    } catch (Exception e) {
 	    	System.out.println("Введено не число");
 	    	System.exit(1);
-	    }
-	       
+	    }    
    
 	    System.out.println("Введите число B:");
 	       
@@ -53,12 +51,7 @@ public class Main {
 	    	System.out.println("Вы выбрали некорректное значение");
 	    	System.exit(1);
 	    }
-	    
-	    
-	  
-	    
-	   
-     
+
 	    System.out.println("Ваш результат: " + perem.sum);
 	  
 	}

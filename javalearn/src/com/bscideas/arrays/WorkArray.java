@@ -48,6 +48,7 @@ public class WorkArray {
 			}
 		return array;
 	}
+	
 	public int multiplicateThree() {
 		//4)В массиве целых чисел утроить каждый положительный элемент, который стоит перед отрицательным.
 		for(int i = 0; i < array.length-1; i++) {
@@ -63,7 +64,6 @@ public class WorkArray {
 		
 		return multiplicateThreeValueSum;
 	}
-	
 	
 	public int differentMidAdnMinElement() {
 		minimumValueForDifferent = array[0];
@@ -111,32 +111,28 @@ public class WorkArray {
 		return array;
 	}
 
-	
 	public int[] changePlace() {
 		//Задание 1, замена местами максимального отрицательного и минимального положительного 
 		//(будет ли считаться 0 положительным?) 
 		tempMinimumPlusValue = array[0];
 		minimumMinusValue = array[0];
 		
-		//поиск наибольшего
+		
 		for(int i = 0; i < array.length; i++) {
-			if(array[i] > tempMinimumPlusValue) {
+			if(array[i] > tempMinimumPlusValue) { //поиск наибольшего
 				
 				tempMinimumPlusValue = array[i];
 				
 			}
-		}
-		
-		//поиск максимального отрицательного
-		for(int i = 0; i < array.length; i++) {
 			
-			if(array[i] < minimumMinusValue) {
+			if(array[i] < minimumMinusValue) { //поиск наименьшего
 				
 				indexMinValue = i;
 				minimumMinusValue = array[i];
 				
 			}
 		}
+		
 		//поиск наименьшего положительного
 		for(int i = 0; i < array.length; i++) {
 			

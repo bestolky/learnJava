@@ -29,7 +29,6 @@ public class Calculator {
 		return sum;
 	}
 
-	
 	@Override
 	public String toString() {
 		return "Calculator [Сумма чисел= " + sum + "]";
