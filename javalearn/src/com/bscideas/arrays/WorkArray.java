@@ -14,111 +14,154 @@ public class WorkArray {
 	7)В массиве целых чисел заменить все нечётные числа на 0. - DONE
 	 */
 
-	int tempSum = 0;
-	int minimumValueForDifferent;
-	int tempMinimumPlusValue;
-	int minumumPlusvalue;
-	int minimumMinusValue;
-	int indexMinValue;
-	int indexPlusValue;
-	int sumDifferentValues;
-	int sumDifferent;
-	int multiplicateThreeValue;
-	int multiplicateThreeValueSum;
-	
-	int[] array = new int[20];
-	
- 	public int[] generateArray() {
-		// Генерация массива от -10 до +10
+ 	public int[] generateArray(int sizeArray) {
+ 		
+ 		int[] array = new int[sizeArray];
+ 		
 		for (int i = 0; i < array.length; i++) {
 			
 			array[i] = (int) Math.round((Math.random() * 20) - 10);
-			//array[i] = (int) Math.round((Math.random() * 20));
+
 		}
+		System.out.println(Arrays.toString(array));
+		
 		return array;
 	}
 		
-	public int[] searchElements() {
-		Arrays.sort(array); //вот тут кажется условие лютым колхозом, умнее к сожалению не придумал.
+	public int[] searchElements(int[] array) {
 		//6)В массиве целых чисел вывести все элементы, которые встречаются больше одного раза и индексы которых нечётные.
-			for(int i = 1; i < array.length - 1 ; i++) {
-				if(array[i] == array[i+1] && i%2 != 0 || array[i] == array[i-1] && i%2 != 0) {
-					System.out.println(array[i]);
+		
+		Arrays.sort(array);
+			
+		for(int i = 0; i < array.length; i++) {
+			
+			for(int j = i+1; j < array.length; j++) {
+				
+				if(array[i] == array[j] && array[i]%2 != 0) {
+			          
+			         String template = String.format("Число: %d", array[i]);
+			          
+			         System.out.println(template);
 				}
 			}
+		}
+		
 		return array;
 	}
 	
-	public int multiplicateThree() {
+	public int[] multiplicateThree(int[] array) {
+		
 		//4)В массиве целых чисел утроить каждый положительный элемент, который стоит перед отрицательным.
+		
 		for(int i = 0; i < array.length-1; i++) {
 			
 			if(array[i] > 0 && array[i+1] < 0) {
 				
-				multiplicateThreeValue = array[i];
-				
-				multiplicateThreeValueSum += multiplicateThreeValue * 3;
-			}
+				array[i] = array[i] * 3;
 			
+			}
 		}
 		
-		return multiplicateThreeValueSum;
+		System.out.println("Утроенный положительный элемент перед отрицательным: " + Arrays.toString(array));
+		
+		return array;
 	}
 	
-	public int differentMidAdnMinElement() {
-		minimumValueForDifferent = array[0];
+	public int differentMidAdnMinElement(int[] array) {
+		
 		//5)В массиве целых чисел найти разницу между средним арифметическим и значение минимального элемента.
+		
+		int minimumValueForDifferent = array[0];
+		
+		int sumDifferentValues = 0;
+		
+		int sumDifferent = 0;
+		
 		for (int i = 0; i < array.length; i++) {
 			
 			sumDifferentValues += array[i];
 			
 			if(array[i] < minimumValueForDifferent) {
+				
 				minimumValueForDifferent = array[i];
 			}
 		}
 		
-		return sumDifferent = sumDifferentValues - minimumValueForDifferent;
+		sumDifferent = sumDifferentValues - minimumValueForDifferent;
+		
+		System.out.println(sumDifferent);
+		
+		return sumDifferent;
 	}
 	
-	public int[] searchSum() {
+	public int[] searchSum(int[] array) {
+		
 		//2)В массиве целых чисел определить сумму элементов, состоящих на чётных позициях.
+		
+		int tempSum = 0;
+		
 		for (int i = 1; i < array.length; i++) {
+			
 			if(i%2 == 0) {
+				
 				tempSum += array[i];
 			}
-		    
 		}
+		
+		System.out.println("Сумма элементов на четных позициях: " + tempSum);
+		
 		return array;
 	}
 	
-	public int[] changeMinusValue() {
+	public int[] changeMinusValue(int[] array) {
+		
 		//3)В массиве целых чисел заменить нулями отрицательные элементы. 
+		
 		for (int i = 0; i < array.length; i++) {
+			
 			if(array[i] < 0) {
+				
 				array[i] = 0;
 			}
 		}
+		
+		System.out.println("Отрицательные числа на нули: " + Arrays.toString(array));
+		
 		return array;
 	}
 	
-	public int[] changeIntValue() {
+	public int[] changeIntValue(int[] array) {
+		
 		//7)В массиве целых чисел заменить все нечётные числа на 0.
+		
 		for (int i = 0; i < array.length; i++) {
+			
 			if(i%2 != 0) {
+				
 				array[i] = 0;
 			}
 		}
+		
+		System.out.println("Все нечётные на 0: " + Arrays.toString(array));
+		
 		return array;
 	}
 
-	public int[] changePlace() {
-		//Задание 1, замена местами максимального отрицательного и минимального положительного 
-		//(будет ли считаться 0 положительным?) 
-		tempMinimumPlusValue = array[0];
-		minimumMinusValue = array[0];
+	public int[] changePlace(int[] array) {
 		
+		//Задание 1, замена местами максимального отрицательного и минимального положительного 
+		
+		int tempMinimumPlusValue = array[0];
+		
+		int minimumMinusValue = array[0];
+		
+		int indexMinValue = 0;
+		
+		int indexPlusValue = 0;
+
 		
 		for(int i = 0; i < array.length; i++) {
+			
 			if(array[i] > tempMinimumPlusValue) { //поиск наибольшего
 				
 				tempMinimumPlusValue = array[i];
@@ -128,6 +171,7 @@ public class WorkArray {
 			if(array[i] < minimumMinusValue) { //поиск наименьшего
 				
 				indexMinValue = i;
+				
 				minimumMinusValue = array[i];
 				
 			}
@@ -139,19 +183,20 @@ public class WorkArray {
 			if(array[i] < tempMinimumPlusValue && array[i]> 0) {
 				
 				indexPlusValue = i;
+				
 				tempMinimumPlusValue = array[i];
 				
 			}
 		}
 		int temp = array[indexPlusValue];
+		
 		array[indexPlusValue] = array[indexMinValue];
+		
 		array[indexMinValue] = temp; 
+		
+		System.out.println("замена местами максимального отрицательного и минимального положительного: " + Arrays.toString(array));
+		
 		return array;
 	}
 
-	@Override
-	public String toString() {
-		return "WorkArray [generateArray()=" + Arrays.toString(array) + "]";
-	}
-	
 }

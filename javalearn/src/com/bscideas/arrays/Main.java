@@ -5,18 +5,13 @@ public class Main {
 	public static void main(String[] args) {
 
 		WorkArray arr = new WorkArray();
-		arr.generateArray();
-		//arr.searchSum();
-		//arr.changeMinusValue();
-		//arr.changeIntValue();
-		//arr.differentMidAdnMinElement();
-		//arr.changePlace();
-		//arr.multiplicateThree();
-		arr.searchElements();
-		System.out.println(arr);
-		//System.out.println(arr.testValue);
-		
-		
+		arr.changeMinusValue(arr.generateArray(10)); 
+		//arr.changeIntValue(arr.generateArray(10)); 
+		//arr.differentMidAdnMinElement(arr.generateArray(10)); 
+		//arr.changePlace(arr.generateArray(10)); 
+		//arr.multiplicateThree(arr.generateArray(10)); 
+		//arr.searchElements(arr.generateArray(10)); 
+		//arr.searchSum(arr.generateArray(10));
 	}
 
 }
