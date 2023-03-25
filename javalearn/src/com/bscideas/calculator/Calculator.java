@@ -1,8 +1,7 @@
 package com.bscideas.calculator;
 
 public class Calculator {
-	int number;
-	int number1;
+
 	int sum;
 		
 	public Calculator() {
@@ -29,9 +28,4 @@ public class Calculator {
 		return sum;
 	}
 
-	@Override
-	public String toString() {
-		return "Calculator [Сумма чисел= " + sum + "]";
-	}
-	
 }
